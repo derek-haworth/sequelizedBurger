@@ -7,7 +7,10 @@ module.exports = function(sequelize, DataTypes) {
     customer: {
       type: DataTypes.STRING,
       // If a customer is to be created, they must have a name
-      allowNull: false
+      allowNull: false,
+      validate: {
+        len: [1, 140]
+      }
     }
   });
   return Customer;
