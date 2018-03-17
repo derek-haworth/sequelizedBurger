@@ -26,17 +26,18 @@
 					<h3 class="text-center">Burgers to Eat</h3>
 					<ul class="menu-block">
 						{{#each burger}}
+						<div class="menu-item">
 							{{#unless this.devoured}}
 							<p class="burger"><span class="burger-id">{{this.id}}</span>{{this.burger_name}}</p>
 							<form method="POST" action="/burgers/update?_method=PUT" class="button-size">
-								<p class="burger">
+								<p class="customer-name">
 									<input type="hidden" name="burger_id" value="{{this.id}}">
 									<input type="text" class="form-control" name="customer" id="customer_name" placeholder="Customer Name">
 								</p>
 								<button class="btn btn-warning devour">Eat it!</button>
 							</form>
-							
 							{{/unless}}
+						</div>
 						{{/each}}
 					</ul>
 				</div>
@@ -51,7 +52,7 @@
 						{{#each burger}}
 							{{#if this.devoured}}
 								{{#if this.Customer.customer}}
-									<p class="served-items"><span class="burger-id">{{this.id}}</span>{{this.burger_name}}<span>(Eaten by {{this.Customer.customer}})<span></p>
+									<p class="served-items"><span class="burger-id">{{this.id}}</span>{{this.burger_name}}<span> (Eaten by {{this.Customer.customer}})<span></p>
 								{{else}}
 									<p class="served-items"><span class="burger-id">{{this.id}}</span>{{this.burger_name}}</p>
 								{{/if}}

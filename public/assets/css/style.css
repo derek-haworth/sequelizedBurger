@@ -1,3 +1,36 @@
 .burger-input-block{
-	margin: 0 0 30px 0;
+	margin: 50px 0;
+}
+.to-eat {
+	border-right: 2px solid #ccc;
+}
+.menu-block {
+	float: left;
+	margin: 30px 0 0 0;
+	width: 80%;
+}
+.menu-block.devoured {
+	text-align: left;
+}
+.menu-item {
+	margin: 15px 0;
+}
+.burger {
+	float: left;
+	width: 100%;
+}
+.customer-name {
+	float: left;
+	width: 65%;
+}
+.devour {
+	float: right;
+	width: 25%;
+}
+span.burger-id {
+	margin:  0 10px 0 0;
+}
+footer {
+	margin: 30px 0 0 0;
+	padding: 40px;
 }
