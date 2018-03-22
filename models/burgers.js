@@ -19,7 +19,12 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        Burger.hasOne(models.Customer);
+        Burger.hasOne(models.Customer, {
+          onDelete: "CASCADE", 
+          foreignKey: {
+            allowNull: false
+          }
+        });
       }
     }
   });
