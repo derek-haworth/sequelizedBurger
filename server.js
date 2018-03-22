@@ -34,7 +34,7 @@ var routes = require("./controllers/burgerController.js");
 app.use(routes);
 
 var PORT = process.env.PORT || 8080;
-db.sequelize.sync().then(function () {  
+db.sequelize.sync({force: true}).then(function () {  
 	app.listen(PORT, function() {
 	    console.log("I\'m listening... on port " + PORT);
 	})
