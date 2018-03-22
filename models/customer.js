@@ -11,7 +11,8 @@ module.exports = function(sequelize, DataTypes) {
       validate: {
         len: [1, 140]
       }
-    }
+    },
+    BurgerId: DataTypes.INTEGER
   });
   return Customer;
 };
