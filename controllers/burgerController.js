@@ -20,6 +20,10 @@ router.get("/burgers", function(req, res) {
   })
   // use promise method to pass the burgers...
   .then(function(dbBurger) {
+    console.log('==============')
+    console.log('HANDLBARS OBJECT')
+    console.log('==============')
+    console.log(dbBurger);
     // into the main index, updating the page
     var hbsObject = {
       burger: dbBurger
