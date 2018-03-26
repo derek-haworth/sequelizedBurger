@@ -16,17 +16,17 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.BOOLEAN,
       defaultValue: false
     }
-  }, {
-    classMethods: {
-      associate: function(models) {
-        Burger.hasOne(models.Customer, {
-          onDelete: "CASCADE", 
-          foreignKey: {
-            allowNull: false
-          }
-        });
-      }
-    }
   });
+
+  Burger.associate = function(models) {
+
+    Burger.hasOne(models.Customer, {
+      onDelete: "CASCADE", 
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+  
   return Burger;
 };
